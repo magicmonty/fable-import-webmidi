@@ -14,7 +14,7 @@ open System.Text.RegularExpressions
 System.Console.OutputEncoding <- System.Text.Encoding.UTF8
 #endif
 
-let dotnetcliVersion = "2.0.0"
+let dotnetcliVersion = "2.0.2"
 
 let mutable dotnetExePath = "dotnet"
 
@@ -60,9 +60,7 @@ Target "Clean" (fun _ ->
     !! srcGlob
     |> Seq.collect(fun p ->
         ["bin";"obj"]
-        |> Seq.map(fun sp ->
-             Path.GetDirectoryName p @@ sp)
-        )
+        |> Seq.map(fun sp -> Path.GetDirectoryName p @@ sp))
     |> CleanDirs
 
     )
@@ -72,10 +70,7 @@ Target "InstallDotNetCore" (fun _ ->
 )
 
 Target "YarnInstall"(fun _ ->
-    Yarn (fun p ->
-        { p with
-            Command = Install Standard
-        })
+    Yarn (fun p -> { p with Command = Install Standard })
 )
 
 Target "DotnetRestore" (fun _ ->
@@ -109,9 +104,7 @@ let fableWebpack workingDir =
         ) "fable webpack --port free"
 
 let mocha args =
-    Yarn(fun yarnParams ->
-        { yarnParams with Command = args |> sprintf "run mocha -- %s" |> YarnCommand.Custom }
-    )
+    Yarn(fun yarnParams -> { yarnParams with Command = args |> sprintf "run mocha -- %s" |> YarnCommand.Custom })
 
 Target "MochaTest" (fun _ ->
     !! testsGlob

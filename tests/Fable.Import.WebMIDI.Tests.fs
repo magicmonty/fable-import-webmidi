@@ -1,8 +1,8 @@
-module Fable.Fable_Import_WebMIDI.Tests
+module Fable.Import.WebMIDI.Tests
 
 open Fable.Core
 open Fable.Core.JsInterop
-open Fable.Fable_Import_WebMIDI
+open Fable.Import.WebMIDI
 open Fable.Core.Testing
 
 [<Global>]

@@ -14,7 +14,7 @@ var babelOptions = {
 }
 
 module.exports = {
-    entry: resolve('./Fable.Fable_Import_WebMIDI.Tests.fsproj'),
+    entry: resolve('./Fable.Import.WebMIDI.Tests.fsproj'),
     output: {
         filename: 'tests.bundle.js',
         path: resolve('./bin'),

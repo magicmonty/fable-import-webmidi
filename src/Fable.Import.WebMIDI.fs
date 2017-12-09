@@ -1,4 +1,4 @@
-module Fable.Fable_Import_WebMIDI
+module Fable.Import.WebMIDI
 
 open Fable.Core
 
