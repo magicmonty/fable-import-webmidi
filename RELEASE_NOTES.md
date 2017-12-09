@@ -1,2 +1,2 @@
-#### 0.1.0-next
+#### 0.1.0-prerelease
 * Initial release
