@@ -1,0 +1,55 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "taskName": "Build",
+            "command": "./build.sh",
+            "windows": {
+                "command": ".\\build.cmd"
+            },
+            "type": "shell",
+            "group": "build",
+            "args": [
+                "MochaTest"
+            ],
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": []
+        },
+        {
+            "taskName": "Pack",
+            "command": "./build.sh",
+            "windows": {
+                "command": ".\\build.cmd"
+            },
+            "type": "shell",
+            "group": "build",
+            "args": [
+                "DotnetPack"
+            ],
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": []
+        },
+        {
+            "taskName": "Release",
+            "command": "./build.sh",
+            "windows": {
+                "command": ".\\build.cmd"
+            },
+            "type": "shell",
+            "group": "build",
+            "args": [
+                "Release"
+            ],
+            "presentation": {
+                "reveal": "silent"
+            },
+            "problemMatcher": []
+        }
+    ]
+}
