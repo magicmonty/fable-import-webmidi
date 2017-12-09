@@ -20,7 +20,6 @@ let mutable dotnetExePath = "dotnet"
 
 let release = LoadReleaseNotes "RELEASE_NOTES.md"
 let srcGlob = "src/**/*.fsproj"
-let testsGlob = "tests/**/*.fsproj"
 
 module Util =
 
@@ -75,7 +74,6 @@ Target "YarnInstall"(fun _ ->
 
 Target "DotnetRestore" (fun _ ->
     !! srcGlob
-    ++ testsGlob
     |> Seq.iter (fun proj ->
         DotNetCli.Restore (fun c ->
             { c with
@@ -95,30 +93,6 @@ Target "DotnetBuild" (fun _ ->
                 ToolPath = dotnetExePath
             })
 ))
-
-
-let fableWebpack workingDir =
-    DotNetCli.RunCommand(fun c ->
-        { c with WorkingDir = workingDir
-                 ToolPath = dotnetExePath }
-        ) "fable webpack --port free"
-
-let mocha args =
-    Yarn(fun yarnParams -> { yarnParams with Command = args |> sprintf "run mocha -- %s" |> YarnCommand.Custom })
-
-Target "MochaTest" (fun _ ->
-    !! testsGlob
-    |> Seq.iter(fun proj ->
-        let projDir = proj |> DirectoryName
-        //Compile to JS
-        fableWebpack projDir
-
-        //Run mocha tests
-        let projDirOutput = projDir </> "bin"
-        mocha projDirOutput
-    )
-
-)
 
 Target "DotnetPack" (fun _ ->
     !! srcGlob
@@ -197,7 +171,6 @@ Target "Release" (fun _ ->
   ==> "YarnInstall"
   ==> "DotnetRestore"
   ==> "DotnetBuild"
-  ==> "MochaTest"
   ==> "DotnetPack"
   ==> "Publish"
   ==> "Release"

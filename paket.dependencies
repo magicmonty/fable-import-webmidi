@@ -3,6 +3,7 @@ content:none
 
 nuget FSharp.Core redirects:force
 nuget Fable.Core
+nuget Fable.PowerPack
 clitool dotnet-fable
 
 group Build

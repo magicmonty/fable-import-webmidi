@@ -12,7 +12,7 @@
             "type": "shell",
             "group": "build",
             "args": [
-                "MochaTest"
+                "DotnetBuild"
             ],
             "presentation": {
                 "reveal": "silent"

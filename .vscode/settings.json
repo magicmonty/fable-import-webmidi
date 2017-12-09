@@ -16,7 +16,6 @@
 	"[Tt]est[Rr]esult*/":true,
 	"[Bb]uild[Ll]og.*":true,
 	"packages/":true,
-	"deploy":true,
 	"docs/output/":true,
 	"temp/":true,
 	"node_modules":true,
