@@ -46,4 +46,4 @@ MacOS/Linux | Windows
 
 Stable | Prerelease
 --- | ---
-[![NuGet Badge](https://buildstats.info/nuget/Fable.Import.WebMIDI)](https://www.nuget.org/packages/Fable.Import.WebMIDI/) | [![NuGet Badge](https://buildstats.info/nuget/Fable.Import.WebMIDI?includePreReleases=true)](https://www.nuget.org/packages/Fable.Import.WebMIDI/)w
+[![NuGet Badge](https://buildstats.info/nuget/Fable.Import.WebMIDI)](https://www.nuget.org/packages/Fable.Import.WebMIDI/) | [![NuGet Badge](https://buildstats.info/nuget/Fable.Import.WebMIDI?includePreReleases=true)](https://www.nuget.org/packages/Fable.Import.WebMIDI/)
