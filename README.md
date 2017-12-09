@@ -38,8 +38,8 @@ Ex:
 
 MacOS/Linux | Windows
 --- | ---
-[![Travis Badge](https://travis-ci.org/magicmonty/Fable.Import.WebMIDI.svg?branch=master)](https://travis-ci.org/magicmonty/Fable.Import.WebMIDI) | [![Build status](https://ci.appveyor.com/api/projects/status/github/magicmonty/Fable.Import.WebMIDI?svg=true)](https://ci.appveyor.com/project/magicmonty/Fable.Import.WebMIDI)
-[![Build History](https://buildstats.info/travisci/chart/magicmonty/Fable.Import.WebMIDI)](https://travis-ci.org/magicmonty/Fable.Import.WebMIDI/builds) | [![Build History](https://buildstats.info/appveyor/chart/magicmonty/Fable.Import.WebMIDI)](https://ci.appveyor.com/project/magicmonty/Fable.Import.WebMIDI)
+[![Travis Badge](https://travis-ci.org/magicmonty/fable-import-webmidi.svg?branch=master)](https://travis-ci.org/magicmonty/fable-import-webmidi) | [![Build status](https://ci.appveyor.com/api/projects/status/github/magicmonty/fable-import-webmidi?svg=true)](https://ci.appveyor.com/project/magicmonty/fable-import-webmidi)
+[![Build History](https://buildstats.info/travisci/chart/magicmonty/fable-import-webmidi)](https://travis-ci.org/magicmonty/fable-import-webmidi/builds) | [![Build History](https://buildstats.info/appveyor/chart/magicmonty/fable-import-webmidi)](https://ci.appveyor.com/project/magicmonty/fable-import-webmidi)
 
 
 ## Nuget
