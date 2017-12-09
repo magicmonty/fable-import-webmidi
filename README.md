@@ -1,5 +1,54 @@
 # Fable.Import.WebMIDI
 
+Fable bindings for [Web MIDI](https://www.w3.org/TR/webmidi/)
+
+install with DotNet:
+```
+dotnet add package Fable.Import.WebMIDI
+```
+
+or with Paket:
+```
+paket add Fable.Import.WebMIDI
+```
+
+### Usage
+
+Example in Elmish:
+
+```fsharp
+open Fable.Import.WebMIDI
+
+type Model = { MIDIAccess: IMIDIAccess option 
+               ErrorMessage: string option }
+
+type Msg = | MIDISuccess of IMIDIAccess
+           | MIDIError of exn
+           | MIDIStateChanged of IMIDIConnectionEvent
+
+let init () : Model*Cmd<Msg> =
+  { MIDIAccess = None 
+    ErrorMessage = None }, Cmd.ofPromise MIDI.requestAccess [ Sysex true ] MIDISuccess MIDIError 
+
+let update (msg: Msg) (model: Model) : Model*Cmd<Msg> = 
+  match msg with
+  | MIDISuccess of midiAccess ->
+    let stateChangeSub dispatch =
+      let onStateChange ev =
+        dispatch (MIDIStateChanged ev)
+
+      midiAccess.OnStateChange <- onStateChange
+
+    { model with MIDIAccess = Some midiAccess }, Cmd.ofSub stateChangeSub
+  | MIDIError of ex ->
+    { model with ErrorMessage = Some ex.Message }, Cmd.none
+  | MIDIStateChanged ev ->
+    printfn "MIDI state changed"
+    model, Cmd.none
+
+...
+
+```
 
 ### Building
 
