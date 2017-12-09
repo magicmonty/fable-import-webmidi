@@ -3,6 +3,11 @@
     <Version>0.1.0-prerelease</Version>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <Authors>magicmonty</Authors>
+    <Description>Fable bindings for WebMIDI</Description>
+    <PackageProjectUrl>https://github.com/magicmonty/fable-import-webmidi</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/magicmonty/fable-import-webmidi</RepositoryUrl>
+    <PackageTags>fsharp;fable</PackageTags>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Fable.Import.WebMIDI.fs" />
